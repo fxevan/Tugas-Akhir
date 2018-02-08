@@ -1,0 +1,14 @@
+#Import fault voltage data from csv file
+import csv
+import numpy as np
+import pywt
+
+fault_file = csv.reader(open("V_AtoG_2MHz_15km_resistance 1 (fault only).csv", "rb"), delimiter = ",")
+x = list(fault_file)
+fault_signal = np.array(x).astype("float")
+print (fault_signal.dtype)
+
+a = fault_signal[1,1]
+b = fault_signal[1,2]
+c = a + b
+print c
