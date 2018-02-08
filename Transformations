@@ -1,0 +1,13 @@
+#acquire the modal signal using Clarke transformation
+
+t = np.array([[1, 1, 1], [2, -1, -1], [0, np.sqrt(3), np.sqrt(3)]]) #Clarke Transformation matrix
+print t
+
+smode = fault_signal * t
+alpha = smode[0:, 0]
+beta = smode[0:, 1]
+gnd = smode[0:, 2]
+
+#alpha signal wavelet transform to locate fault
+cA, cD = pywt.dwt([1, 2, 3, 4], 'db4')
+
