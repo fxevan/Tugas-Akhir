@@ -8,6 +8,7 @@ x = list(fault_file)
 fault_signal = np.array(x).astype("float")
 print (fault_signal.dtype)
 
+#test scheme
 a = fault_signal[1,1]
 b = fault_signal[1,2]
 c = a + b
